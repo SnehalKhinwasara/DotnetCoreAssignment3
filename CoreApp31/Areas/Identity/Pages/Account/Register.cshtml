@@ -29,14 +29,14 @@
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Input.Name"></label>
                 <select asp-for="Input.Name" class="form-control"
                          asp-items='new SelectList((List<IdentityRole>)roles, "Name", "Name")'
                         >
                 </select>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
+            </div>*@
 
 
             <button type="submit" class="btn btn-primary">Register</button>

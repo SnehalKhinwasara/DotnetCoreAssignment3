@@ -73,7 +73,7 @@ namespace CoreApp31.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl;
             // define a ViewData that will list role and take these roles to View
-            ViewData["Name"] = _roleManager.Roles.ToList();
+          //  ViewData["Name"] = _roleManager.Roles.ToList();
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
@@ -82,7 +82,7 @@ namespace CoreApp31.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             // Get the role object based on the RoleName
-            var role = await _roleManager.FindByNameAsync(Input.Name);
+           // var role = await _roleManager.FindByNameAsync(Input.Name);
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
@@ -92,7 +92,7 @@ namespace CoreApp31.Areas.Identity.Pages.Account
                     _logger.LogInformation("User created a new account with password.");
 
                     // add role to user
-                    await _userManager.AddToRoleAsync(user, role.Name);
+                  //  await _userManager.AddToRoleAsync(user, role.Name);
 
                     //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     //code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

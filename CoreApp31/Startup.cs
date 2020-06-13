@@ -80,6 +80,10 @@ namespace CoreApp31
                              "writepolicy",
                              policy => policy.RequireRole("Manager", "Clerk")
                           );
+                      options.AddPolicy(
+                            "Adminpolicy",
+                            policy => policy.RequireRole("Administrator")
+                         );
 
                   }
                 ); // Role Based Security
